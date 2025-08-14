@@ -2,5 +2,21 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended"
+  ],
+  "regexManagers": [
+    {
+      "fileMatch": ["Dockerfile"],
+      "matchStrings": ["ARG KIND_VERSION=(?<currentValue>.*?)\\n"],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "kubernetes-sigs/kind",
+      "extractVersionTemplate": "^v?(?<version>.*)$"
+    },
+    {
+      "fileMatch": ["Dockerfile"],
+      "matchStrings": ["ARG KUBECTL_VERSION=(?<currentValue>.*?)\\n"],
+      "datasourceTemplate": "github-releases",
+      "depNameTemplate": "kubernetes/kubernetes",
+      "extractVersionTemplate": "^v?(?<version>.*)$"
+    }
   ]
 }
