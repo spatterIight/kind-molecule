@@ -1,3 +1,5 @@
-# kind
+# kind-molecule
 
-A simple container image w/ kind and kubectl, developed primarily for use w/ [Molecule](https://ansible.readthedocs.io/projects/molecule/) to test Ansible roles which use the [Kubernetes.core](https://github.com/ansible-collections/kubernetes.core) collection.
+A container image for testing Kubernetes Ansible roles with [Molecule](https://ansible.readthedocs.io/projects/molecule/)
+
+Implementation example: [spatterIight/ansible-role-kube-bench](https://github.com/spatterIight/ansible-role-kube-bench/tree/main/molecule/default)
