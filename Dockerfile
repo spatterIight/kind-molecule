@@ -10,4 +10,7 @@ LABEL maintainer="spatterlight@spatterlight.space"
 ADD https://kind.sigs.k8s.io/dl/v${KIND_VERSION}/kind-linux-${TARGETARCH} /usr/local/bin/kind
 ADD https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl /usr/local/bin/kubectl
 
+RUN apk update
+RUN apk add bash
+
 RUN chmod +x /usr/local/bin/kind /usr/local/bin/kubectl
