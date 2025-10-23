@@ -4,7 +4,6 @@ ARG KIND_VERSION=0.30.0
 ARG KUBECTL_VERSION=1.34.1
 ARG TARGETARCH
 
-LABEL version="v1.0.0"
 LABEL maintainer="spatterlight@spatterlight.space"
 
 ADD https://kind.sigs.k8s.io/dl/v${KIND_VERSION}/kind-linux-${TARGETARCH} /usr/local/bin/kind
