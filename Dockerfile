@@ -7,7 +7,7 @@ ARG TARGETARCH
 LABEL maintainer="spatterlight@spatterlight.space"
 
 ADD https://kind.sigs.k8s.io/dl/v${KIND_VERSION}/kind-linux-${TARGETARCH} /usr/local/bin/kind
-ADD https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl /usr/local/bin/kubectl
+ADD https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/linux/${TARGETARCH}/kubectl /usr/local/bin/kubectl
 
 RUN apk update
 RUN apk --no-cache add bash python3 py3-kubernetes
