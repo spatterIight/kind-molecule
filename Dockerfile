@@ -1,4 +1,4 @@
-FROM docker:29.3.1-dind
+FROM docker:29.4.1-dind
 
 ARG KIND_VERSION=0.31.0
 ARG KUBECTL_VERSION=1.35.3
