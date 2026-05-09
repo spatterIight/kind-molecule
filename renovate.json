@@ -3,16 +3,18 @@
   "extends": [
     "config:recommended"
   ],
-  "regexManagers": [
+  "customManagers": [
     {
-      "fileMatch": ["Dockerfile"],
+      "customType": "regex",
+      "managerFilePatterns": ["/Dockerfile/"],
       "matchStrings": ["ARG KIND_VERSION=(?<currentValue>.*?)\\n"],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "kubernetes-sigs/kind",
       "extractVersionTemplate": "^v?(?<version>.*)$"
     },
     {
-      "fileMatch": ["Dockerfile"],
+      "customType": "regex",
+      "managerFilePatterns": ["/Dockerfile/"],
       "matchStrings": ["ARG KUBECTL_VERSION=(?<currentValue>.*?)\\n"],
       "datasourceTemplate": "github-releases",
       "depNameTemplate": "kubernetes/kubernetes",
