@@ -1,7 +1,7 @@
 FROM docker:29.7.2-dind
 
 ARG KIND_VERSION=0.33.0
-ARG KUBECTL_VERSION=1.36.4
+ARG KUBECTL_VERSION=1.37.0
 ARG TARGETARCH
 
 LABEL maintainer="spatterlight@spatterlight.space"
