@@ -1,0 +1,26 @@
+---
+name: CI
+
+# Gives Renovate's branch automerge a check to wait on.
+
+on:  # yamllint disable-line rule:truthy
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build the image
+    runs-on: ubuntu-latest
+    # Same-repository pull requests already run via the push event.
+    if: >-
+      github.event_name != 'pull_request'
+      || github.event.pull_request.head.repo.full_name != github.repository
+    steps:
+      - name: Check out
+        uses: actions/checkout@v7
+
+      - name: Build
+        run: docker build -t kind-molecule:ci .
